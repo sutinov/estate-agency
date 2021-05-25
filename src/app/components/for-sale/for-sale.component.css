@@ -1,0 +1,19 @@
+.title {
+  text-align: center;
+  font-size: 2rem;
+  padding-top: 1rem;
+}
+mat-card {
+  width: 350px !important;
+  margin: 20px;
+  text-align: center;
+}
+mat-grid-list {
+  display: flex;
+  float: left;
+}
+
+mat-card-content {
+  height: 200px;
+  overflow: hidden;
+}

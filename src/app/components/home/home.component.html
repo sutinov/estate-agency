@@ -1,0 +1,60 @@
+<h2 class="title">WELCOME TO REAL ESTATE AGENCY</h2>
+<!-- <mat-toolbar color="primary" class="app-header">
+  <span class="nav-tool-items">
+    <a
+      mat-button
+      [routerLink]="['/']"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Home</a
+    >
+    <a mat-button routerLink="login" routerLinkActive="active">Log in</a>
+
+    <a mat-button [routerLink]="['/for-sale']" routerLinkActive="active"
+      >For Sale</a
+    >
+    <a mat-button [routerLink]="['/for-rent']" routerLinkActive="active"
+      >For Rent</a
+    >
+  </span>
+</mat-toolbar> -->
+<div class="wrapper">
+  <mat-tab-group
+    mat-stretch-tabs
+    class="example-stretched-tabs mat-elevation-z4"
+  >
+    <mat-tab label="For Sale"> <for-sale></for-sale></mat-tab>
+    <mat-tab label="For Rent"> <for-rent></for-rent> </mat-tab>
+  </mat-tab-group>
+  <aside *ngIf="showSidebar">
+    <div class="button">
+      <button class="close" (click)="onXClick()">X</button>
+    </div>
+    <section class="property">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title [innerHTML]="propertyDetails.property_name_display">
+        </mat-card-title>
+        <mat-card-subtitle
+          [innerHTML]="propertyDetails.asset_type_name"
+        ></mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <img
+          class="sidebarImg"
+          [src]="propertyDetails.media_list[0].attatchment"
+          alt=""
+        />
+        <br />
+        <br />
+        <mat-card-title>Price: ${{ propertyDetails.price }}</mat-card-title>
+        <br />
+
+        <p [innerHTML]="propertyDetails.property_description"></p>
+      </mat-card-content>
+
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card>
+  </section>
+  </aside>
+</div>
